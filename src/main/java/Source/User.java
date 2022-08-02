@@ -8,6 +8,7 @@ public class User {
     private String username; //   @ ...
     private String password;
     private int id; // for internal use
+    private String passrecov;
     private LocalDate login;
     private LocalDate logout;
     private ArrayList<Post> posts = new ArrayList<>();
@@ -18,8 +19,9 @@ public class User {
     private ArrayList<Group> groups = new ArrayList<>();
     public static ArrayList<User> userArrayList = new ArrayList<>();
 
-    User(String name, String pass) {
+    User(String name, String username, String pass) {
         this.name = name;
+        this.username = username;
         password = pass;
         userArrayList.add(this);
         login = LocalDate.now();
@@ -52,6 +54,14 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassrecov(String string) {
+        passrecov = string;
+    }
+
+    public String getPassrecov() {
+        return passrecov;
     }
 
     //post

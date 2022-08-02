@@ -6,7 +6,7 @@ public class Like {
     private User user;
     private LocalDate time;
 
-    Like(User user) {
+    public Like(User user) {
         this.user = user;
         time = LocalDate.now();
     }

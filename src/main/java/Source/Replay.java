@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Replay extends Post {
 
-    Replay(User user1, String text) {
+    public Replay(User user1, String text) {
         super(user1, text);
     }
 

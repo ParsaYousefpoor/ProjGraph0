@@ -1,8 +1,8 @@
 package Source;
 
 public class UserNormal extends User {
-    UserNormal(String name, String pass) {
-        super(name, pass);
+    public UserNormal(String name, String username, String pass) {
+        super(name, username, pass);
     }
 
     public void newPost(PostNormal post) {

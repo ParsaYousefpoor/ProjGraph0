@@ -11,7 +11,7 @@ public class Group {
     private ArrayList<Object[]> datas = new ArrayList<>();
     public static ArrayList<Group> groups = new ArrayList<>();
 
-    Group(User admin, String name) {
+    public Group(User admin, String name) {
         this.name = name;
         this.admin = admin;
         groups.add(this);

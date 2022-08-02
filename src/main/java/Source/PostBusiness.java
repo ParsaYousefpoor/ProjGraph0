@@ -6,7 +6,7 @@ public class PostBusiness extends Post {
     private ArrayList<Integer> views = new ArrayList<>();
     private ArrayList<ArrayList<Like>> likes = new ArrayList<>();
 
-    PostBusiness(User user1, String text) {
+    public PostBusiness(User user1, String text) {
         super(user1, text);
     }
 

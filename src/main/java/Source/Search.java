@@ -1,18 +1,18 @@
 package Source;
 
 public class Search {
-    public static boolean existUser(String name) {
+    public static boolean existUser(String username) {
         for (User u : User.userArrayList) {
-            if (name.equals(u.getUsername())) {
+            if (username.equals(u.getUsername())) {
                 return true;
             }
         }
         return false;
     }
 
-    public static User whichUser(String name) {
+    public static User whichUser(String username) {
         for (User u : User.userArrayList) {
-            if (name.equals(u.getUsername())) {
+            if (username.equals(u.getUsername())) {
                 return u;
             }
         }

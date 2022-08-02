@@ -1,8 +1,8 @@
 package Source;
 
 public class UserBusiness extends User {
-    UserBusiness(String name, String pass) {
-        super(name, pass);
+    public UserBusiness(String name, String username, String pass) {
+        super(name, username, pass);
     }
 
     public void newPost(PostBusiness post) {

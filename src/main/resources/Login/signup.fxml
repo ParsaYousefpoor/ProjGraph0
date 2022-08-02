@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login.Signup">
+   <children>
+      <Button layoutX="283.0" layoutY="361.0" mnemonicParsing="false" onAction="#login" text="Login" />
+      <Button layoutX="280.0" layoutY="261.0" mnemonicParsing="false" onAction="#create" text="Create" />
+      <Label layoutX="238.0" layoutY="329.0" text="Already have an account?" />
+      <Label fx:id="label" alignment="CENTER" layoutY="229.0" prefHeight="17.0" prefWidth="602.0" />
+      <TextField fx:id="name" layoutX="232.0" layoutY="55.0" promptText="Name" />
+      <TextField fx:id="username" layoutX="232.0" layoutY="80.0" promptText="Username" />
+      <TextField fx:id="password" layoutX="232.0" layoutY="105.0" promptText="Password" />
+      <TextField fx:id="recovery" layoutX="231.0" layoutY="175.0" promptText="Answer" />
+      <Label layoutX="204.0" layoutY="130.0" text="Security answer for password recovery:" />
+      <Label layoutX="203.0" layoutY="147.0" text="What is the name of your first teacher?" />
+      <RadioButton fx:id="normal" layoutX="254.0" layoutY="23.0" mnemonicParsing="false" text="Normal account">
+         <toggleGroup>
+            <ToggleGroup fx:id="tg" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="business" layoutX="251.0" layoutY="6.0" mnemonicParsing="false" text="Business account" toggleGroup="$tg" />
+   </children>
+</AnchorPane>
