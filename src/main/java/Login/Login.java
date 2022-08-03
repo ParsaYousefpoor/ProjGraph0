@@ -50,6 +50,8 @@ public class Login {
 //                    scene = new Scene(root);
 //                    stage.setScene(scene);
 //                    stage.show();
+                } else if (s2.length() < 8) {
+                    label.setText("Password is at least 8 characters");
                 } else {
                     label.setText("Wrong password");
                 }
@@ -69,16 +71,26 @@ public class Login {
 
     @FXML
     protected void forgot(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("forgot.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        String s1 = username.getText();
+        if (s1 != null) {
+            if (Search.existUser(s1)) {
+                User user = Search.whichUser(s1);
+                changeScene(event, "forgot");
+            } else {
+                label.setText("No user exist with this username");
+            }
+        } else {
+            label.setText("Enter a username before recovering password");
+        }
     }
 
     @FXML
     protected void signup(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("signup.fxml"));
+        changeScene(event, "signup");
+    }
+
+    protected void changeScene(ActionEvent event, String string) throws IOException {
+        root = FXMLLoader.load(getClass().getResource(string + ".fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

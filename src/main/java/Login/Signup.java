@@ -52,10 +52,12 @@ public class Signup {
         } else if (s3 == null) {
             label.setText("Enter a password for your account");
         } else if (s4 == null) {
-            label.setText("Enter a answer for your recovering your password");
+            label.setText("Enter an answer for your recovering your password");
         } else {
             if (Search.existUser(s2)) {
                 label.setText("A user with this username already exist");
+            } else if (s3.length() < 8) {
+                label.setText("Password must have at least 8 characters");
             } else {
                 if (normal.isSelected()) {
                     UserNormal user = new UserNormal(s1, s2, s3);
