@@ -1,5 +1,7 @@
 package Source;
 
+import com.example.projgraph.HelloApplication;
+
 import java.util.ArrayList;
 
 public class Chat {
@@ -53,5 +55,36 @@ public class Chat {
         objects[3] = text;
         datas.remove(i);
         datas.add(i, objects);
+    }
+
+    @Override
+    public String toString() {
+        String temp = "";
+        if (user1.getId() == HelloApplication.user.getId()) {
+            temp += user2.getName();
+        } else {
+            temp += user1.getName();
+        }
+        temp += "\n";
+        if (datas.size() != 0) {
+            Object[] objs = datas.get(datas.size()-1);
+            User user0 = (User) objs[1];
+            if (user1.getId() == HelloApplication.user.getId()) {
+                temp += "You : ";
+            }
+            String temp1 = (String) objs[3];
+            if (temp1.length() < 10) {
+                temp += temp1;
+            } else {
+                String temp2 = "";
+                for (int i = 0; i<10;i++) {
+                    temp2 += temp1.charAt(i);
+                }
+                temp += temp2;
+            }
+        } else {
+            temp = "No message";
+        }
+        return temp;
     }
 }
