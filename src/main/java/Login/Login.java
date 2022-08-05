@@ -26,15 +26,6 @@ public class Login {
     private TextField password;
     @FXML
     private Label label;
-//    @FXML
-//    public void login(ActionEvent event) throws IOException {
-//        root = FXMLLoader.load(getClass().getResource("login.fxml"));
-//        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        scene = new Scene(root);
-//        stage.setScene(scene);
-//        stage.setTitle("Login");
-//        stage.show();
-//    }
 
     @FXML
     protected void login(ActionEvent event) throws IOException {
@@ -45,11 +36,11 @@ public class Login {
                 User user = Search.whichUser(s1);
                 if (s2.equals(user.getPassword())) {
                     HelloApplication.user = user;
-//                    root = FXMLLoader.load(getClass().getResource("forgot.fxml"));
-//                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//                    scene = new Scene(root);
-//                    stage.setScene(scene);
-//                    stage.show();
+                    root = FXMLLoader.load(getClass().getResource("app.fxml"));
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
                 } else if (s2.length() < 8) {
                     label.setText("Password is at least 8 characters");
                 } else {

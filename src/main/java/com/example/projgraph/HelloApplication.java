@@ -22,6 +22,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+        User user1 = new User("Parsa","AmirMc","12345678");
         launch();
     }
 }

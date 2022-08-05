@@ -19,7 +19,7 @@ public class User {
     private ArrayList<Group> groups = new ArrayList<>();
     public static ArrayList<User> userArrayList = new ArrayList<>();
 
-    User(String name, String username, String pass) {
+    public User(String name, String username, String pass) {
         this.name = name;
         this.username = username;
         password = pass;
@@ -102,6 +102,10 @@ public class User {
         if (followers.contains(user1)) {
             followers.remove(user1);
         }
+    }
+
+    public ArrayList<User> getFollowers() {
+        return followers;
     }
 
     //chat and group

@@ -5,4 +5,6 @@ module com.example.projgraph {
 
     opens com.example.projgraph to javafx.fxml;
     exports com.example.projgraph;
+    exports Login;
+    opens Login to javafx.fxml;
 }
