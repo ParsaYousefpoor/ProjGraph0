@@ -17,7 +17,7 @@
         <Label fx:id="nameLabel" contentDisplay="RIGHT" layoutX="272.0" layoutY="14.0" text="Label" />
         <ListView layoutX="77.0" layoutY="90.0" prefHeight="296.0" prefWidth="200.0" />
       <Button layoutX="529.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" text="Log out" />
-      <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" text="Posts" />
-      <Button layoutX="14.0" layoutY="107.0" mnemonicParsing="false" text="Groups" />
+      <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#postShow" text="Posts" />
+      <Button layoutX="14.0" layoutY="107.0" mnemonicParsing="false" onAction="#groupShow" text="Groups" />
     </children>
 </AnchorPane>

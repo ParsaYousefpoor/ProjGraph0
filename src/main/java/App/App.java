@@ -3,6 +3,7 @@ package App;
 import Source.*;
 
 import com.example.projgraph.HelloApplication;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,11 +32,31 @@ public class App implements Initializable {
     private Label followerLabel;
     @FXML
     private Label followingLabel;
+    @FXML
+    private ListView<Post> postsList;
 
     @FXML
     protected void logout(ActionEvent event) throws IOException {
         user.saveLogout();
         root = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void groupShow(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("groups.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void chatShow(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("app.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -47,5 +69,6 @@ public class App implements Initializable {
         userLabel.setText(user.getUsername());
         followerLabel.setText(Integer.toString(user.getFollowers().size()));
         followingLabel.setText(Integer.toString(user.getFollowings().size()));
+        postsList.setItems(FXCollections.observableList(user.getPosts()));
     }
 }

@@ -46,6 +46,24 @@ public class Chats implements Initializable {
         stage.show();
     }
 
+    @FXML
+    protected void groupShow(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("groups.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    protected void postShow(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("app.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         nameLabel.setText(user.getName());
