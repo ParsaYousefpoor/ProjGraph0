@@ -119,6 +119,10 @@ public class User {
         chats.add(chat);
     }
 
+    public ArrayList<Chat> getChats() {
+        return chats;
+    }
+
     public void startGroup(ArrayList<User> users, String name) {
         Group group = new Group(this, name);
         for (User u : users) {
@@ -129,6 +133,10 @@ public class User {
 
     public void addGroup(Group group) {
         groups.add(group);
+    }
+
+    public ArrayList<Group> getGroups() {
+        return groups;
     }
 
     //likes

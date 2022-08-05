@@ -1,5 +1,6 @@
 package Source;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Group {
@@ -36,12 +37,12 @@ public class Group {
 
     //data
 
-    //Data -> id - user - connected message - text
+    //Data -> id - user - connected message - text - time
     public void addData(String id1, User user, Object[] objects1, String text) {
         if (datas.isEmpty()) {
-            Object[] objects = {id1, user, null, text};
+            Object[] objects = {id1, user, null, text, LocalDate.now()};
         } else if (users.contains(user)) {
-            Object[] objects = {id1, user, objects1, text};
+            Object[] objects = {id1, user, objects1, text, LocalDate.now()};
         }
     }
 

@@ -1,7 +1,8 @@
 package App;
 
-import Source.User;
+import Source.*;
 import com.example.projgraph.HelloApplication;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +31,8 @@ public class Groups implements Initializable {
     private Label followerLabel;
     @FXML
     private Label followingLabel;
+    @FXML
+    private ListView<Group> groupsList;
 
     @FXML
     protected void logout(ActionEvent event) throws IOException {
@@ -46,5 +50,6 @@ public class Groups implements Initializable {
         userLabel.setText(user.getUsername());
         followerLabel.setText(Integer.toString(user.getFollowers().size()));
         followingLabel.setText(Integer.toString(user.getFollowings().size()));
+        groupsList.setItems(FXCollections.observableList(user.getGroups()));
     }
 }
