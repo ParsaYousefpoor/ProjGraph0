@@ -1,5 +1,6 @@
 package Login;
 
+import Source.Search;
 import Source.User;
 import com.example.projgraph.HelloApplication;
 import javafx.event.ActionEvent;
@@ -15,8 +16,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Forgot {
-    User user = HelloApplication.user;
-    boolean flag = false;
+    User user;
+    int flag = 0;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -29,6 +30,10 @@ public class Forgot {
     @FXML
     private Label label4;
     @FXML
+    private Label label5;
+    @FXML
+    private TextField username;
+    @FXML
     private TextField ans;
     @FXML
     private TextField tp;
@@ -38,17 +43,37 @@ public class Forgot {
 
     @FXML
     protected void check(ActionEvent event) throws IOException {
-        if (!flag) {
+        if (flag == 0) {
+            userCheck();
+        } else if (flag == 1) {
             ansCheck();
         } else {
             passUpdate(event);
         }
     }
 
+    protected void userCheck() {
+        String s1 = username.getText();
+        if (s1 != null) {
+            if (Search.existUser(s1)) {
+                user = Search.whichUser(s1);
+                flag++;
+                username.setVisible(false);
+                label5.setVisible(false);
+                ans.setVisible(true);
+                label1.setVisible(true);
+            } else {
+                label5.setText("User with this username does not exist");
+            }
+        } else {
+            label5.setText("Enter username");
+        }
+    }
+
     protected void ansCheck() {
         String s1 = ans.getText();
         if (s1 != null) {
-            if (user.getPassrecov().equals(s1)) {
+            if (s1.equals(user.getPassrecov())) {
                 ans.setVisible(false);
                 label1.setVisible(false);
                 tp.setVisible(true);
@@ -56,7 +81,7 @@ public class Forgot {
                 label2.setVisible(true);
                 label3.setVisible(true);
                 label4.setVisible(false);
-                flag = true;
+                flag++;
             } else {
                 label4.setVisible(true);
             }

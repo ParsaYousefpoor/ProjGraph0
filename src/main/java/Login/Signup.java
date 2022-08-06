@@ -57,16 +57,19 @@ public class Signup {
             if (Search.existUser(s2)) {
                 label.setText("A user with this username already exist");
             } else if (s3.length() < 8) {
-                label.setText("Password must have at least 8 characters");
+                label.setText("Password is short");
             } else {
                 if (normal.isSelected()) {
                     UserNormal user = new UserNormal(s1, s2, s3);
                     user.setPassrecov(s4);
-                } else {
+                    login(event);
+                } else if (business.isSelected()) {
                     UserBusiness user = new UserBusiness(s1, s2, s3);
                     user.setPassrecov(s4);
+                    login(event);
+                } else {
+                    label.setText("Choose your account type first");
                 }
-                login(event);
             }
         }
     }

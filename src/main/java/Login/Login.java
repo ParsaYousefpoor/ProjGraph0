@@ -36,7 +36,7 @@ public class Login {
                 User user = Search.whichUser(s1);
                 if (s2.equals(user.getPassword())) {
                     HelloApplication.user = user;
-                    root = FXMLLoader.load(getClass().getResource("app.fxml"));
+                    root = FXMLLoader.load(getClass().getResource("/App/app.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     scene = new Scene(root);
                     stage.setScene(scene);
@@ -62,17 +62,7 @@ public class Login {
 
     @FXML
     protected void forgot(ActionEvent event) throws IOException {
-        String s1 = username.getText();
-        if (s1 != null) {
-            if (Search.existUser(s1)) {
-                User user = Search.whichUser(s1);
-                changeScene(event, "forgot");
-            } else {
-                label.setText("No user exist with this username");
-            }
-        } else {
-            label.setText("Enter a username before recovering password");
-        }
+        changeScene(event, "forgot");
     }
 
     @FXML

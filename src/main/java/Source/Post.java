@@ -1,5 +1,7 @@
 package Source;
 
+import com.example.projgraph.HelloApplication;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -41,5 +43,15 @@ public class Post {
     public void addReplay(User user1, String text) {
         Replay replay = new Replay(user1, text);
         replays.add(replay);
+    }
+
+    @Override
+    public String toString() {
+        String temp = getText();
+        temp += "\nLikes: ";
+        temp += HelloApplication.numToStr(likes.size());
+        temp += "\nComments: ";
+        temp += HelloApplication.numToStr(replays.size());
+        return temp;
     }
 }

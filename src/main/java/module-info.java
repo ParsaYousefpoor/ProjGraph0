@@ -7,4 +7,6 @@ module com.example.projgraph {
     exports com.example.projgraph;
     exports Login;
     opens Login to javafx.fxml;
+    exports App;
+    opens App to javafx.fxml;
 }
