@@ -18,4 +18,9 @@ public class Like {
     public LocalDate getTime() {
         return time;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + user.getName() + "\nUsername: " + user.getUsername();
+    }
 }

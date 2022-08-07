@@ -24,7 +24,7 @@
       <Button layoutX="137.0" layoutY="340.0" mnemonicParsing="false" onAction="#commentShow" text="Comments" />
       <Button layoutX="519.0" layoutY="340.0" mnemonicParsing="false" onAction="#addNewPost" text="New Post" />
       <TextField fx:id="postText" layoutX="211.0" layoutY="340.0" prefHeight="25.0" prefWidth="308.0" promptText="Type here" />
-      <Label fx:id="warning" alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="65.0" prefHeight="17.0" prefWidth="213.0" text="You need to type something for posting" />
+      <Label fx:id="warning" alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="65.0" prefHeight="17.0" prefWidth="213.0" text="You need to type something for posting" visible="false" />
       <Label fx:id="accountType" alignment="CENTER" layoutX="310.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" text="Label" />
       <Button fx:id="details" layoutX="17.0" layoutY="340.0" mnemonicParsing="false" onAction="#detailShow" prefHeight="25.0" prefWidth="80.0" text="Post Details" />
       <Button layoutX="527.0" layoutY="35.0" mnemonicParsing="false" text="Settings" />

@@ -24,6 +24,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class App implements Initializable {
+    public static Post post;
     private User user = HelloApplication.user;
     private Stage stage;
     private Scene scene;
@@ -65,7 +66,7 @@ public class App implements Initializable {
 
     @FXML
     protected void likeShow(ActionEvent event) throws IOException {
-        Post post = postsList.getSelectionModel().getSelectedItem();
+        post = postsList.getSelectionModel().getSelectedItem();
         if (post != null) {
             chaneScene(event, "likes");
         }
@@ -73,7 +74,7 @@ public class App implements Initializable {
 
     @FXML
     protected void commentShow(ActionEvent event) throws IOException {
-        Post post = postsList.getSelectionModel().getSelectedItem();
+        post = postsList.getSelectionModel().getSelectedItem();
         if (post != null) {
             chaneScene(event, "comments");
         }
@@ -81,13 +82,7 @@ public class App implements Initializable {
 
     @FXML
     protected void detailShow(ActionEvent event) throws IOException {
-//        followerLabel.setOnKeyPressed(new EventHandler<KeyEvent>() {
-//            @Override
-//            public void handle(KeyEvent keyEvent) {
-//
-//            }
-//        });
-        Post post = postsList.getSelectionModel().getSelectedItem();
+        post = postsList.getSelectionModel().getSelectedItem();
         if (post != null) {
             chaneScene(event, "details");
         }
@@ -106,7 +101,8 @@ public class App implements Initializable {
                 post1 = post;
             }
             user.newPost(post1);
-            postsList.setItems(FXCollections.observableList(user.getPosts()));
+            postsList.setItems(FXCollections.observableList(Search.getPost(user)));
+//            postsList.setItems(FXCollections.observableList(user.getPosts()));
             postText.setText("");
             warning.setVisible(false);
         } else {
@@ -127,7 +123,8 @@ public class App implements Initializable {
         userLabel.setText(user.getUsername());
         followerLabel.setText(Integer.toString(user.getFollowers().size()));
         followingLabel.setText(Integer.toString(user.getFollowings().size()));
-        postsList.setItems(FXCollections.observableList(user.getPosts()));
+        postsList.setItems(FXCollections.observableList(Search.getPost(user)));
+//        postsList.setItems(FXCollections.observableList(user.getPosts()));
     }
 
     protected void chaneScene(ActionEvent event, String string) throws IOException {

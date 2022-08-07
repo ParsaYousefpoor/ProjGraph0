@@ -20,13 +20,13 @@
       <Button layoutX="14.0" layoutY="90.0" mnemonicParsing="false" onAction="#groupShow" text="Groups" />
       <Button layoutX="14.0" layoutY="115.0" mnemonicParsing="false" onAction="#chatShow" text="Chats" />
       <ListView fx:id="postsList" layoutX="96.0" layoutY="90.0" prefHeight="250.0" prefWidth="490.0" />
-      <Button layoutX="90.0" layoutY="340.0" mnemonicParsing="false" onAction="#likeShow" text="Likes" />
-      <Button layoutX="132.0" layoutY="340.0" mnemonicParsing="false" onAction="#commentShow" text="Comments" />
+      <Button layoutX="96.0" layoutY="340.0" mnemonicParsing="false" onAction="#likeShow" text="Likes" />
+      <Button layoutX="137.0" layoutY="340.0" mnemonicParsing="false" onAction="#commentShow" text="Comments" />
       <Button layoutX="519.0" layoutY="340.0" mnemonicParsing="false" onAction="#addNewPost" text="New Post" />
-      <TextField fx:id="postText" layoutX="206.0" layoutY="340.0" prefHeight="25.0" prefWidth="313.0" promptText="Type here" />
-      <Label fx:id="warning" alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="65.0" prefHeight="17.0" prefWidth="213.0" text="You need to type something for posting" />
+      <TextField fx:id="postText" layoutX="211.0" layoutY="340.0" prefHeight="25.0" prefWidth="308.0" promptText="Type here" />
+      <Label fx:id="warning" alignment="CENTER" contentDisplay="CENTER" layoutX="310.0" layoutY="65.0" prefHeight="17.0" prefWidth="213.0" text="You need to type something for posting" visible="false" />
       <Label fx:id="accountType" alignment="CENTER" layoutX="310.0" layoutY="14.0" prefHeight="17.0" prefWidth="197.0" text="Label" />
-      <Button fx:id="details" layoutX="90.0" layoutY="365.0" mnemonicParsing="false" onAction="#detailShow" prefHeight="25.0" prefWidth="116.0" text="Post Details" />
+      <Button fx:id="details" layoutX="17.0" layoutY="340.0" mnemonicParsing="false" onAction="#detailShow" prefHeight="25.0" prefWidth="80.0" text="Post Details" />
       <Button layoutX="527.0" layoutY="35.0" mnemonicParsing="false" text="Settings" />
    </children>
 </AnchorPane>

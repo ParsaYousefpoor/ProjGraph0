@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="App.Comments">
    <children>
       <Button layoutX="545.0" layoutY="14.0" mnemonicParsing="false" text="Back" />
-      <ListView fx:id="commentsList" layoutX="14.0" layoutY="50.0" prefHeight="336.0" prefWidth="572.0" />
    </children>
 </AnchorPane>

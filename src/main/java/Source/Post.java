@@ -45,6 +45,10 @@ public class Post {
         replays.add(replay);
     }
 
+    public ArrayList<Replay> getReplays() {
+        return replays;
+    }
+
     @Override
     public String toString() {
         String temp = getText();
