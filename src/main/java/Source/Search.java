@@ -38,4 +38,28 @@ public class Search {
         }
         return posts;
     }
+
+    public static ArrayList<Replay> addReplay(ArrayList<Replay> replays, Replay replay) {
+        ArrayList<Replay> reps = new ArrayList<>();
+        ArrayList<Replay> temp = replay.getReplays();
+        int a = replays.indexOf(replay);
+        for (Replay r : replays) {
+            reps.add(r);
+        }
+        for (Replay r : temp) {
+            reps.add(a,r);
+        }
+        return reps;
+    }
+
+    public static ArrayList<Replay> removeReplay(ArrayList<Replay> replays, Replay replay) {
+        ArrayList<Replay> reps = new ArrayList<>();
+        ArrayList<Replay> temp = replay.getReplays();
+        for (Replay r : replays) {
+            if (temp.contains(r)) {
+                reps.add(r);
+            }
+        }
+        return reps;
+    }
 }

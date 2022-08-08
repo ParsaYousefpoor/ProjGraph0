@@ -89,7 +89,7 @@ public class App implements Initializable {
     }
 
     @FXML
-    protected void addNewPost(ActionEvent event) {
+    protected void addNewPost() {
         String temp = postText.getText();
         if (temp != null && temp.length() != 0) {
             Post post1;
@@ -102,7 +102,6 @@ public class App implements Initializable {
             }
             user.newPost(post1);
             postsList.setItems(FXCollections.observableList(Search.getPost(user)));
-//            postsList.setItems(FXCollections.observableList(user.getPosts()));
             postText.setText("");
             warning.setVisible(false);
         } else {
